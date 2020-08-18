@@ -8,18 +8,24 @@
 <body>
     <script>
         function returnDataPromise() {
-            return fetch("the_office_us_data.json")
+            return fetch("https://raw.githubusercontent.com/luisfelipesdn12/where-am-i-in-the-office/master/the_office_us_data.json")
                 .then(response => response.json());
         }
     </script>
 
-    <p>How may episode? <p id="episodes-number"></p></p>
+    <p>How many episodes? <p id="episodes-number"></p></p>
+    <p>How many I've watched? <p id="episodes-watched-number"></p></p>
 
     <script>
         returnDataPromise()
             .then(data => {
                 let numberOfEpisodes = data.episodes.length;
                 document.getElementById("episodes-number").innerHTML = numberOfEpisodes;
+
+                let WatchedEpisodes = data.episodes
+                            .filter(episode => (episode.watched == true));
+                console.log(WatchedEpisodes);
+                document.getElementById("episodes-number").innerHTML = WatchedEpisodes.length;
             });
     </script>
 </body>

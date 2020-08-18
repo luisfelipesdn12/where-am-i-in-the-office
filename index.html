@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Where Am I In The Office</title>
+    <meta name="description" content="A site witch shows my progress at watching The Office series.">
+</head>
+<body>
+    <script>
+        function returnDataPromise() {
+            return fetch("the_office_us_data.json")
+                .then(response => response.json());
+        }
+    </script>
+
+    <p>How may episode? <p id="episodes-number"></p></p>
+
+    <script>
+        returnDataPromise()
+            .then(data => {
+                let numberOfEpisodes = data.episodes.length;
+                document.getElementById("episodes-number").innerHTML = numberOfEpisodes;
+            });
+    </script>
+</body>
+</html>

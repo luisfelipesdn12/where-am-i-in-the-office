@@ -4,29 +4,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Where Am I In The Office</title>
     <meta name="description" content="A site witch shows my progress at watching The Office series.">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <script src="./script.js"></script>
+
+    <style>
+        body {
+            margin: 10%;
+        }
+    </style>
 </head>
 <body>
+    <h2 id="watched-percentage"></h2>
+
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped bg-info" id="watched-percentage-bar" role="progressbar" style="width: 50%"></div>
+    </div>
+
+    <hr>
+    
+    <div id="accordion">
+    </div>
+
     <script>
-        function returnDataPromise() {
-            return fetch("https://raw.githubusercontent.com/luisfelipesdn12/where-am-i-in-the-office/master/the_office_us_data.json")
-                .then(response => response.json());
-        }
-    </script>
-
-    <p>How many episodes? <p id="episodes-number"></p></p>
-    <p>How many I've watched? <p id="episodes-watched-number"></p></p>
-
-    <script>
-        returnDataPromise()
-            .then(data => {
-                let numberOfEpisodes = data.episodes.length;
-                document.getElementById("episodes-number").innerHTML = numberOfEpisodes;
-
-                let WatchedEpisodes = data.episodes
-                            .filter(episode => (episode.watched == true));
-                console.log(WatchedEpisodes);
-                document.getElementById("episodes-watched-number").innerHTML = WatchedEpisodes.length;
-            });
+        populatePercentageBar();
+        populateSeasonCards();
+        populateEpisodesInSeasons();
     </script>
 </body>
 </html>

@@ -13,7 +13,7 @@ async function returnWatchPercentagePromise() {
         });
 }
 
-function addSeasonToList(seasonNumber) {
+function addSeasonToList(seasonNumber, isComplete) {
     const newSeasonCard = document.createElement("div");
     newSeasonCard.className = "card";
 
@@ -45,6 +45,14 @@ function addSeasonToList(seasonNumber) {
     unorderedList.id = "list-of-episodes-" + seasonNumber;
     cardBody.appendChild(unorderedList);
 
+    if (isComplete) {
+        const doneBadgeElement = document.createElement("span");
+        doneBadgeElement.innerHTML = "done";
+        doneBadgeElement.className = "badge badge-info badge-pill";
+
+        h5OfButton.appendChild(doneBadgeElement);
+    }
+
     document.getElementById("accordion").appendChild(newSeasonCard);
 }
 
@@ -57,6 +65,7 @@ function addEpisodeToSeasonList(episodeObject) {
         const doneBadgeElement = document.createElement("span");
         doneBadgeElement.innerHTML = "done";
         doneBadgeElement.className = "badge badge-info badge-pill";
+
         newListItem.appendChild(doneBadgeElement);
     }
 
@@ -87,6 +96,7 @@ function populateSeasonCards() {
     returnDataPromise()
         .then(data => {
             let episodeSeasons = [];
+            const seasonsAndEpisodesWatched = {};
 
             // For each episode
             for (let i = 0; i < data.episodes.length; i++) {
@@ -94,10 +104,23 @@ function populateSeasonCards() {
                 if (episodeSeasons.indexOf(data.episodes[i].season) === -1) {
                     episodeSeasons.push(data.episodes[i].season);
                 }
+
+                // If the episode season is not already in the seasonsAndEpisodesWatched
+                if (! seasonsAndEpisodesWatched.hasOwnProperty(data.episodes[i].season)) {
+                    seasonsAndEpisodesWatched[data.episodes[i].season] = [];
+                }
+
+                seasonsAndEpisodesWatched[data.episodes[i].season].push(data.episodes[i].watched);
             }
 
             for (let i = 0; i < episodeSeasons.length; i++) {
-                addSeasonToList(episodeSeasons[i]);
+                const unwatchedEpisodes = seasonsAndEpisodesWatched[episodeSeasons[i]].filter(i => !i);
+
+                if (unwatchedEpisodes.length === 0) {
+                    addSeasonToList(episodeSeasons[i], true);
+                } else {
+                    addSeasonToList(episodeSeasons[i], false);
+                }
             }
         });
 }
@@ -112,3 +135,25 @@ function populateEpisodesInSeasons() {
             }
         });
 }
+
+function populateBadgeInWatchedSeasons() {
+    returnDataPromise()
+        .then(data => {
+            const seasonsAndEpisodesWatched = {};
+
+            // For each episode
+            for (let i = 0; i < data.episodes.length; i++) {
+                // Insert this episode to season
+                
+            }
+        });
+}
+
+window.onscroll = (ev) => {
+    // If the user get to the bottom
+    if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) {
+        if (document.getElementById("made-footer") != null) {
+            document.getElementById("made-footer").id = "made-footer-showed";
+        } 
+    }
+};

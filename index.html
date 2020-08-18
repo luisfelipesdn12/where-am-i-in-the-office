@@ -6,31 +6,35 @@
     <meta name="description" content="A site witch shows my progress at watching The Office series.">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 
     <script src="./script.js"></script>
 
-    <style>
-        body {
-            margin: 10%;
-        }
-    </style>
 </head>
 <body>
-    <h2 id="watched-percentage"></h2>
+    <h1>Where am I in The Office</h1>
 
+    <hr>
+
+    <h2 id="watched-percentage"></h2>
     <div class="progress">
-        <div class="progress-bar progress-bar-striped bg-info" id="watched-percentage-bar" role="progressbar" style="width: 50%"></div>
+        <div class="progress-bar progress-bar-striped bg-info" id="watched-percentage-bar" role="progressbar"></div>
     </div>
 
     <hr>
     
     <div id="accordion">
-    </div>
 
     <script>
         populatePercentageBar();
         populateSeasonCards();
         populateEpisodesInSeasons();
     </script>
+
+    <footer>
+        <div class="container" id="made-footer" aria-disabled="true">
+            <span class="text-muted">Made with ❤ by <a href="https://github.com/luisfelipesdn12/">Luis Felipe</a>.</span>
+        </div>
+    </footer>
 </body>
 </html>

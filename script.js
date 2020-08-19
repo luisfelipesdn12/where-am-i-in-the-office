@@ -1,6 +1,11 @@
 async function returnDataPromise() {
     return fetch("https://raw.githubusercontent.com/luisfelipesdn12/where-am-i-in-the-office/master/the_office_us_data.json")
-        .then(response => response.json());
+        .then(response => response.json())
+        .catch(err => {
+            console.log(err);
+
+            document.getElementById("error-alert").style.display = "block";
+        });
 }
 
 async function returnWatchPercentagePromise() {
@@ -10,6 +15,11 @@ async function returnWatchPercentagePromise() {
             const actualValue = data.episodes.filter(episode => episode.watched == true).length;
 
             return (actualValue / maxValue) * 100;
+        })
+        .catch(err => {
+            console.log(err);
+
+            document.getElementById("error-alert").style.display = "block";
         });
 }
 
@@ -89,11 +99,16 @@ function populatePercentageBar() {
         .then(percentage => {
             document.getElementById("watched-percentage").innerHTML = percentage.toFixed(2) + "%";
             document.getElementById("watched-percentage-bar").style.width = percentage + "%";
+        })
+        .catch(err => {
+            console.log(err);
+
+            document.getElementById("error-alert").style.display = "block";
         });
 }
 
-function populateSeasonCards() {
-    returnDataPromise()
+async function populateSeasonCards() {
+    await returnDataPromise()
         .then(data => {
             let episodeSeasons = [];
             const seasonsAndEpisodesWatched = {};
@@ -122,6 +137,11 @@ function populateSeasonCards() {
                     addSeasonToList(episodeSeasons[i], false);
                 }
             }
+        })
+        .catch(err => {
+            console.log(err);
+
+            document.getElementById("error-alert").style.display = "block";
         });
 }
 
@@ -133,6 +153,11 @@ function populateEpisodesInSeasons() {
                 // Insert this episode to season
                 addEpisodeToSeasonList(data.episodes[i]);
             }
+        })
+        .catch(err => {
+            console.log(err);
+
+            document.getElementById("error-alert").style.display = "block";
         });
 }
 
@@ -146,6 +171,11 @@ function populateBadgeInWatchedSeasons() {
                 // Insert this episode to season
                 
             }
+        })
+        .catch(err => {
+            console.log(err);
+
+            document.getElementById("error-alert").style.display = "block";
         });
 }
 

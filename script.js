@@ -27,7 +27,7 @@ function addSeasonToList(seasonNumber, isComplete) {
 
     const button = document.createElement("button");
     button.innerHTML = "Season " + seasonNumber;
-    button.className = "btn btn-link";
+    button.className = "text-info btn btn-link";
     button.setAttribute("onClick", "toggleCollapse('collapse-" + seasonNumber + "');");
     h5OfButton.appendChild(button);
 

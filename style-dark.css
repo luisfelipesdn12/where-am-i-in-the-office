@@ -1,0 +1,81 @@
+body {
+    margin: 10%;
+    background-color: #212529;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, small {
+    color: #BDBDBD;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.mb-0 {
+    color: #17A2B8;
+}
+
+.list-group-item {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #BDBDBD;
+}
+
+hr {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#accordion {
+    margin-bottom: 30%;
+}
+
+#made-footer {
+    margin-bottom: 20%;
+    display: none;
+}
+
+@keyframes arrowNoteFadeOut {
+    0%   { opacity: 0; }
+    50%  { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+@-o-keyframes arrowNoteFadeOut {
+    0%   { opacity: 0; }
+    50%  { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+@-moz-keyframes arrowNoteFadeOut {
+    0%   { opacity: 0; }
+    50%  { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+@-webkit-keyframes arrowNoteFadeOut {
+    0%   { opacity: 0; }
+    50%  { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+#made-footer-showed {
+    margin-bottom: 20%;
+    display: block;
+
+    -webkit-animation: arrowNoteFadeOut 2s;
+    -moz-animation: arrowNoteFadeOut 2s;
+    -o-animation: arrowNoteFadeOut 2s;
+    animation: arrowNoteFadeOut 2s;
+}
+
+@media(min-aspect-ratio: 1.5/1) {
+    #accordion {
+        margin-bottom: 10%;
+    }
+
+    #made-footer {
+        margin-bottom: 0%;
+        display: none;
+    }
+
+    #made-footer-showed {
+        margin-bottom: 0%;
+        display: block;
+    }
+}

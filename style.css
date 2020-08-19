@@ -7,13 +7,7 @@ body {
 }
 
 #made-footer {
-    position: fixed;
-    left:0px;
-    bottom:0px;
-    height:30px;
-    width:100%;
-    text-align: center;
-    margin-bottom: 5%;
+    margin-bottom: 20%;
     display: none;
 }
 
@@ -39,17 +33,27 @@ body {
 }
 
 #made-footer-showed {
-    position: fixed;
-    left:0px;
-    bottom:0px;
-    height:30px;
-    width:100%;
-    text-align: center;
-    margin-bottom: 5%;
+    margin-bottom: 20%;
     display: block;
 
     -webkit-animation: arrowNoteFadeOut 2s;
     -moz-animation: arrowNoteFadeOut 2s;
     -o-animation: arrowNoteFadeOut 2s;
     animation: arrowNoteFadeOut 2s;
+}
+
+@media(min-aspect-ratio: 1.5/1) {
+    #accordion {
+        margin-bottom: 10%;
+    }
+
+    #made-footer {
+        margin-bottom: 0%;
+        display: none;
+    }
+
+    #made-footer-showed {
+        margin-bottom: 0%;
+        display: block;
+    }
 }

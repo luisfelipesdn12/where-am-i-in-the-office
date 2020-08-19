@@ -111,13 +111,13 @@
          "season":2,
          "episode":12,
          "name":"The Injury",
-         "watched":false
+         "watched":true
       },
       {
          "season":2,
          "episode":13,
          "name":"The Secret",
-         "watched":false
+         "watched":true
       },
       {
          "season":2,

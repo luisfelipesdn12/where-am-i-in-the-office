@@ -171,7 +171,7 @@
          "season":2,
          "episode":22,
          "name":"Casino Night",
-         "watched":false
+         "watched":true
       },
       {
          "season":3,

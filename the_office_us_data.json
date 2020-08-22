@@ -261,19 +261,19 @@
          "season":3,
          "episode":15,
          "name":"Ben Franklin",
-         "watched":false
+         "watched":true
       },
       {
          "season":3,
          "episode":16,
          "name":"Phyllis' Wedding",
-         "watched":false
+         "watched":true
       },
       {
          "season":3,
          "episode":17,
          "name":"Business School",
-         "watched":false
+         "watched":true
       },
       {
          "season":3,

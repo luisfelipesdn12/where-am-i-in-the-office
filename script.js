@@ -1,28 +1,3 @@
-async function returnDataPromise() {
-    return fetch("https://raw.githubusercontent.com/luisfelipesdn12/where-am-i-in-the-office/master/the_office_us_data.json")
-        .then(response => response.json())
-        .catch(err => {
-            console.log(err);
-
-            document.getElementById("error-alert").style.display = "block";
-        });
-}
-
-async function returnWatchPercentagePromise() {
-    return await returnDataPromise()
-        .then(data => {
-            const maxValue = data.episodes.length;
-            const actualValue = data.episodes.filter(episode => episode.watched == true).length;
-
-            return (actualValue / maxValue) * 100;
-        })
-        .catch(err => {
-            console.log(err);
-
-            document.getElementById("error-alert").style.display = "block";
-        });
-}
-
 function addSeasonToList(seasonNumber, isComplete) {
     const newSeasonCard = document.createElement("div");
     newSeasonCard.className = "card";
@@ -94,22 +69,25 @@ function toggleCollapse(cardID) {
     }
 }
 
-function populatePercentageBar() {
-    returnWatchPercentagePromise()
-        .then(percentage => {
+function populatePage() {
+    fetch("https://raw.githubusercontent.com/luisfelipesdn12/where-am-i-in-the-office/master/the_office_us_data.json")
+        .then(response => response.json())
+        .then(data => {
+            // Populate the progress bar and return the
+            // same data to the next .then()
+            const maxValue = data.episodes.length;
+            const actualValue = data.episodes.filter(episode => episode.watched == true).length;
+
+            let percentage = (actualValue / maxValue) * 100;
+
             document.getElementById("watched-percentage").innerHTML = percentage.toFixed(2) + "%";
             document.getElementById("watched-percentage-bar").style.width = percentage + "%";
+
+            return data;
         })
-        .catch(err => {
-            console.log(err);
-
-            document.getElementById("error-alert").style.display = "block";
-        });
-}
-
-async function populateSeasonCards() {
-    await returnDataPromise()
         .then(data => {
+            // Populate the seasons cards and return the
+            // same data to the next .then()
             let episodeSeasons = [];
             const seasonsAndEpisodesWatched = {};
 
@@ -137,39 +115,16 @@ async function populateSeasonCards() {
                     addSeasonToList(episodeSeasons[i], false);
                 }
             }
+
+            return data;
         })
-        .catch(err => {
-            console.log(err);
-
-            document.getElementById("error-alert").style.display = "block";
-        });
-}
-
-function populateEpisodesInSeasons() {
-    returnDataPromise()
         .then(data => {
+            // Put the episodes in the seasons cards
+            
             // For each episode
             for (let i = 0; i < data.episodes.length; i++) {
                 // Insert this episode to season
                 addEpisodeToSeasonList(data.episodes[i]);
-            }
-        })
-        .catch(err => {
-            console.log(err);
-
-            document.getElementById("error-alert").style.display = "block";
-        });
-}
-
-function populateBadgeInWatchedSeasons() {
-    returnDataPromise()
-        .then(data => {
-            const seasonsAndEpisodesWatched = {};
-
-            // For each episode
-            for (let i = 0; i < data.episodes.length; i++) {
-                // Insert this episode to season
-                
             }
         })
         .catch(err => {

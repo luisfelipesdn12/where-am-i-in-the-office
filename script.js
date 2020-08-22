@@ -69,8 +69,8 @@ function toggleCollapse(cardID) {
     }
 }
 
-function populatePage() {
-    fetch("https://raw.githubusercontent.com/luisfelipesdn12/where-am-i-in-the-office/master/the_office_us_data.json")
+function populatePage(jsonToFetch) {
+    fetch(jsonToFetch)
         .then(response => response.json())
         .then(data => {
             // Populate the progress bar and return the

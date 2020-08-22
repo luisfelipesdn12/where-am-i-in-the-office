@@ -291,7 +291,7 @@
          "season":3,
          "episode":20,
          "name":"Safety Training",
-         "watched":false
+         "watched":true
       },
       {
          "season":3,

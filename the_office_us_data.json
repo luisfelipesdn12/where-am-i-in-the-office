@@ -339,13 +339,13 @@
          "season":4,
          "episode":3,
          "name":"Dunder Mifflin Infinity (1)",
-         "watched":false
+         "watched":true
       },
       {
          "season":4,
          "episode":4,
          "name":"Dunder Mifflin Infinity (2)",
-         "watched":false
+         "watched":true
       },
       {
          "season":4,

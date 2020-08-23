@@ -327,13 +327,13 @@
          "season":4,
          "episode":1,
          "name":"Fun Run (1)",
-         "watched":false
+         "watched":true
       },
       {
          "season":4,
          "episode":2,
          "name":"Fun Run (2)",
-         "watched":false
+         "watched":true
       },
       {
          "season":4,

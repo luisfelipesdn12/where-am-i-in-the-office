@@ -363,13 +363,13 @@
          "season":4,
          "episode":7,
          "name":"Money (1)",
-         "watched":false
+         "watched":true
       },
       {
          "season":4,
          "episode":8,
          "name":"Money (2)",
-         "watched":false
+         "watched":true
       },
       {
          "season":4,

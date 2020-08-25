@@ -411,7 +411,7 @@
          "season":4,
          "episode":15,
          "name":"Night Out",
-         "watched":false
+         "watched":true
       },
       {
          "season":4,

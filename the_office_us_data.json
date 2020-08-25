@@ -429,13 +429,13 @@
          "season":4,
          "episode":18,
          "name":"Goodbye, Toby (1)",
-         "watched":false
+         "watched":true
       },
       {
          "season":4,
          "episode":19,
          "name":"Goodbye, Toby (2)",
-         "watched":false
+         "watched":true
       },
       {
          "season":5,

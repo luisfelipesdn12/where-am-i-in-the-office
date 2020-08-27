@@ -519,13 +519,13 @@
          "season":5,
          "episode":14,
          "name":"Stress Relief (1)",
-         "watched":false
+         "watched":true
       },
       {
          "season":5,
          "episode":15,
          "name":"Stress Relief (2)",
-         "watched":false
+         "watched":true
       },
       {
          "season":5,

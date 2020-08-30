@@ -549,7 +549,7 @@
          "season":5,
          "episode":19,
          "name":"Golden Ticket",
-         "watched":false
+         "watched":true
       },
       {
          "season":5,

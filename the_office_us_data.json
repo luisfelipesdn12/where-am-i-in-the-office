@@ -585,7 +585,7 @@
          "season":5,
          "episode":25,
          "name":"Broke",
-         "watched":false
+         "watched":true
       },
       {
          "season":5,

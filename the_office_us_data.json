@@ -627,13 +627,13 @@
          "season":6,
          "episode":4,
          "name":"Niagara (1)",
-         "watched":false
+         "watched":true
       },
       {
          "season":6,
          "episode":5,
          "name":"Niagara (2)",
-         "watched":false
+         "watched":true
       },
       {
          "season":6,

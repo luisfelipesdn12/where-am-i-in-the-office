@@ -609,7 +609,7 @@
          "season":6,
          "episode":1,
          "name":"Gossip",
-         "watched":false
+         "watched":true
       },
       {
          "season":6,

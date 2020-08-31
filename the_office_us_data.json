@@ -603,7 +603,7 @@
          "season":5,
          "episode":28,
          "name":"Company Picnic",
-         "watched":false
+         "watched":true
       },
       {
          "season":6,

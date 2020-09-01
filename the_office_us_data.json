@@ -663,7 +663,7 @@
          "season":6,
          "episode":10,
          "name":"Murder",
-         "watched":false
+         "watched":true
       },
       {
          "season":6,

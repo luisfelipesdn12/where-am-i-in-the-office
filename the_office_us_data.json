@@ -729,7 +729,7 @@
          "season":6,
          "episode":21,
          "name":"Happy Hour",
-         "watched":false
+         "watched":true
       },
       {
          "season":6,

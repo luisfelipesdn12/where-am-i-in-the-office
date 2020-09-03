@@ -777,7 +777,7 @@
          "season":7,
          "episode":3,
          "name":"Andy's Play",
-         "watched":false
+         "watched":true
       },
       {
          "season":7,

@@ -807,7 +807,7 @@
          "season":7,
          "episode":8,
          "name":"Viewing Party",
-         "watched":false
+         "watched":true
       },
       {
          "season":7,

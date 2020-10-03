@@ -1017,7 +1017,7 @@
          "season":8,
          "episode":17,
          "name":"Test the Store",
-         "watched":false
+         "watched":true
       },
       {
          "season":8,

@@ -1137,13 +1137,13 @@
           "season": 9,
           "episode": 13,
           "name": "Junior Salesman",
-          "watched": false
+          "watched": true
        },
        {
           "season": 9,
           "episode": 14,
           "name": "Vandalism",
-          "watched": false
+          "watched": true
        },
        {
           "season": 9,

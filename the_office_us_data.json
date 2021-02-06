@@ -1155,25 +1155,25 @@
           "season": 9,
           "episode": 16,
           "name": "Moving On",
-          "watched": false
+          "watched": true
        },
        {
           "season": 9,
           "episode": 17,
           "name": "The Farm",
-          "watched": false
+          "watched": true
        },
        {
           "season": 9,
           "episode": 18,
           "name": "Promos",
-          "watched": false
+          "watched": true
        },
        {
           "season": 9,
           "episode": 19,
           "name": "Stairmageddon",
-          "watched": false
+          "watched": true
        },
        {
           "season": 9,

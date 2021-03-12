@@ -1191,13 +1191,13 @@
           "season": 9,
           "episode": 22,
           "name": "A.A.R.M. (1)",
-          "watched": false
+          "watched": true
        },
        {
           "season": 9,
           "episode": 23,
           "name": "A.A.R.M. (2)",
-          "watched": false
+          "watched": true
        },
        {
           "season": 9,

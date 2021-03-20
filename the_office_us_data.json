@@ -1203,13 +1203,13 @@
           "season": 9,
           "episode": 24,
           "name": "Finale (1)",
-          "watched": false
+          "watched": true
        },
        {
           "season": 9,
           "episode": 25,
           "name": "Finale (2)",
-          "watched": false
+          "watched": true
        }
     ],
     "genres": [
